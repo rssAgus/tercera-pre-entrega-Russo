@@ -1,0 +1,13 @@
+{% extends 'cliente/index.html' %}
+
+{% block contenido_titulo %}
+    Registrar Guitarra
+{% endblock  %}
+
+{% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <p><button type="submit">Agregar</button></p>
+    </form>
+{% endblock %}

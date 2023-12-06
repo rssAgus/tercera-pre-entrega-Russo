@@ -7,3 +7,8 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = models.Cliente
         fields = ["nombre", "apellido", "nacimiento", "pais_origen"]
+
+class GuitarrasForm(forms.ModelForm):
+    class Meta:
+        model = models.Guitarras
+        fields = "__all__"

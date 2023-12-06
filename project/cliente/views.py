@@ -50,3 +50,13 @@ def guitarras_stock(request):
     c1.save()
 
     return redirect("cliente:index")
+
+def registrar_guitarra(request):
+    if request.method == "POST":
+        form = forms.GuitarrasForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("cliente:index")
+    else:
+        form = forms.GuitarrasForm()
+    return render(request, "cliente/registro_guitarras.html", {"form": form})
